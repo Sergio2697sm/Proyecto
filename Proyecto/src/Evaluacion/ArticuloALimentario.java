@@ -17,8 +17,9 @@ public class ArticuloALimentario extends Articulo {
 		
 	}
 
-	public ArticuloALimentario(int codigo, String descripcion, double precio, int iva) {
-		super(codigo, descripcion, precio, iva);
+	public ArticuloALimentario(String descripcion, double precio, int iva,int calorias) {
+		super(descripcion, precio, iva);
+		this.calorias=calorias;
 		
 	}
 

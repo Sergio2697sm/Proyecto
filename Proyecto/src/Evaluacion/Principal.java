@@ -1,5 +1,9 @@
 package Evaluacion;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Principal {
 
 	public static void main(String[] args) {
@@ -10,22 +14,36 @@ public class Principal {
 		
 		
 		int menu=0;
-		gestionArticulo ga = new gestionArticulo() {
+		GestionArticulo ga = new GestionArticulo() {
 		};
 		do {
 			switch (menu) {
 			case 1:
 				Articulo a = null;
-				ga.incluirArtiuclo(a);
+				ga.incluirArticulo(a);
 				break;
-
-			default:
+				
+			case 2:
+				int codigo = leerNumero("Introduzca el código a buscar");
+				ga.buscarArticulo(0);
 				break;
 			}
 		} while(menu!=8);
 		
 		
 		
+	}
+
+	private static int leerNumero(String string) {
+		System.out.println(string);
+		BufferedReader gf= new BufferedReader(new InputStreamReader(System.in));
+		try {
+			gf.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 }
