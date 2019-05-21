@@ -14,8 +14,7 @@ public class Principal {
 		
 		
 		int menu=0;
-		GestionArticulo ga = new GestionArticulo() {
-		};
+		GestionArticulo ga = new GestionArticulosArrayListlmpl();
 		do {
 			switch (menu) {
 			case 1:
