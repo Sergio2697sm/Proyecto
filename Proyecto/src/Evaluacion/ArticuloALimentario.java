@@ -25,8 +25,7 @@ public class ArticuloALimentario extends Articulo {
 
 	@Override
 	public String toString() {
-		return "ArticuloALimentario [calorias=" + calorias + ", getCalorias()=" + getCalorias() + ", toString()="
-				+ super.toString() + "]";
+		return  super.toString()+" [calorias=" + calorias + "tipo: Alimentario ]";
 	}
 	
 	

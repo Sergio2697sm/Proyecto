@@ -27,7 +27,7 @@ public class ArticuloNoAlimentario extends Articulo {
 
 	@Override
 	public String toString() {
-		return "ArticuloNoAlimentario [peso=" + peso + "]";
+		return super.toString() + "[peso=" + peso + "tipo: No alimentario]";
 	}
 
 }

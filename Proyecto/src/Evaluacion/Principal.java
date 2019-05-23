@@ -10,9 +10,9 @@ public class Principal {
 		System.out.println(" **********MENU******************\r\n " + " 1.- Almacenar nuevo artículo\r\n"
 				+ "2.- Eliminar artículo\r\n" + "3.- Buscar artículo por código\r\n"
 				+ "4.- Buscar artículo por descripción\r\n" + "5.- Mostrar inventario de artículos\r\n"
-				+ "6.- Buscar artículos por intervalo de precios\r\n" + "7.- Salir\r\n" + "Introduce opción: ");
+				+ "6.- Buscar artículos por intervalo de precios\r\n" + "7.- Salir\r\n");
 
-		int menu = 0;
+		int menu = leerNumero("Introduce opción: ");
 		GestionArticulo ga = new GestionArticulosArrayListlmpl(null);
 		do {
 			switch (menu) {
@@ -29,18 +29,19 @@ public class Principal {
 					int peso = leerNumero("Introduzca un peso");
 					a=new ArticuloNoAlimentario(descripcion, precio, iva, peso);
 				}
-				
+				System.out.println(a);
 				ga.incluirArticulo(a);
 				
 				break;
 
 				
 			case 2:
-
-				ga.buscarArticulo(0);
+				int codigo=leerNumero("Introduzca un codigo");
+				ga.buscarArticulo(codigo);
 				break;
 
 			case 3:
+				
 				break;
 
 			case 4:

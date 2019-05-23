@@ -20,7 +20,12 @@ public class GestionArticulosArrayListlmpl implements GestionArticulo {
 
 	@Override
 	public void buscarArticulo(int codigo) {
-		// TODO Auto-generated method stub
+		for (Articulo recorrido : inventario) {
+			if(recorrido.getCodigo()==codigo) {
+				System.out.println(recorrido);
+			}
+		}
+		
 		
 	}
 
