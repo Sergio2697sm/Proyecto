@@ -22,6 +22,8 @@ public class ArticuloNoAlimentario extends Articulo {
 
 		this.peso = peso;
 	}
+	
+	
 
 	@Override
 	public String toString() {

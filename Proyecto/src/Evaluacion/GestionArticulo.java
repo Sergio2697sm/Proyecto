@@ -2,7 +2,6 @@ package Evaluacion;
 
 public interface GestionArticulo {
 
-	void incluirArtiuclo(Articulo a);
 
 	void incluirArticulo(Articulo a);
 

@@ -58,7 +58,7 @@ public abstract class Articulo {
 
 	@Override
 	public String toString() {
-		return "CODIGO: " + codigo + "- DESCRIPCION " + descripcion + "- PRECIO: " + precio + "-iVA" + iva + "]";
+		return "CODIGO: " + codigo + "- DESCRIPCION " + descripcion + "- PRECIO: " + precio + "-iVA" + iva + "%]";
 	}
 
 }
