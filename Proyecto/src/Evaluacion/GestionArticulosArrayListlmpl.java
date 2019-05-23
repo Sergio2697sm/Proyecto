@@ -31,19 +31,31 @@ public class GestionArticulosArrayListlmpl implements GestionArticulo {
 
 	@Override
 	public void eliminarArticulo(int codigo) {
-		// TODO Auto-generated method stub
+
+		for (Articulo recorrido : inventario) {
+			if(recorrido.getCodigo()==codigo) {
+				recorrido=null;
+			}
+		}
 		
 	}
 
 	@Override
 	public void buscarPorDescricion(String descripcion) {
-		// TODO Auto-generated method stub
+
+		for (Articulo igual : inventario) {
+			if(igual.getDescripcion()==descripcion) {
+				System.out.println(igual);
+			}
+		}
 		
 	}
 
 	@Override
 	public void mostrarInventario() {
-		// TODO Auto-generated method stub
+		for (Articulo articulo : inventario) {
+			System.out.println(articulo);
+		}
 		
 	}
 

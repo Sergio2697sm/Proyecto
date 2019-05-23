@@ -18,7 +18,7 @@ public class Principal {
 			switch (menu) {
 			case 1:
 				Articulo a = null;
-				int iva = leerNumero("Introductiva el iva");
+				int iva = leerNumero("Introduce un iva");
 				double precio = leerdouble("Introduce un precio");
 				String descripcion = leerDescripcion("Introduzca una descripcion");
 				int tipo = leerNumero("Introduzca 1 si es alimentario y 2 si no es alimentario");
@@ -41,20 +41,23 @@ public class Principal {
 				break;
 
 			case 3:
-				
+				codigo=leerNumero("Introduzca el codigo a borrar");
+				ga.eliminarArticulo(codigo);
 				break;
 
 			case 4:
+				String descripciones=leerDescripcion("Introduzca una descripcion");
+				ga.buscarPorDescricion(descripciones);
 				break;
 
 			case 5:
+				ga.mostrarInventario();
 				break;
 			case 6:
-				break;
-			case 7:
+				ga.buscarPorInventario();
 				break;
 			}
-		} while (menu != 8);
+		} while (menu != 7);
 
 	}
 
