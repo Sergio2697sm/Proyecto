@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class GestionArticulosArrayListlmpl implements GestionArticulo {
 
-	private ArrayList<Articulo> inventario=new ArrayList<Articulo>();
+	private ArrayList<Articulo> inventario=null;
 
-	public GestionArticulosArrayListlmpl(ArrayList<Articulo> inventario) {
-		super();
-		this.inventario = inventario;
+	public GestionArticulosArrayListlmpl() {
+		
+		inventario=new ArrayList<Articulo>();
 	}
 
 	@Override
@@ -60,10 +60,13 @@ public class GestionArticulosArrayListlmpl implements GestionArticulo {
 	}
 
 	@Override
-	public void buscarPorInventario() {
-		// TODO Auto-generated method stub
+	public void buscarPorIntervalo(double precioMayor,double precioMenor) {
+		for (Articulo igual : inventario) {
+			if(igual.getPrecio()>=precioMenor && igual.getPrecio()<=precioMayor) {
+				System.out.println(igual);
+			}
 		
 	}
 	
-	
+	}
 }

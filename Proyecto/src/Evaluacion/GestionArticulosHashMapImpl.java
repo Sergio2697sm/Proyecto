@@ -2,45 +2,57 @@ package Evaluacion;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class GestionArticulosHashMapImpl implements GestionArticulo {
 
-	HashMap<String, Articulo> inventario;
+	HashMap<Integer, Articulo> inventario=null;
+	
+	
+
+	public GestionArticulosHashMapImpl() {
+		inventario = new HashMap<Integer, Articulo>();
+	}
 
 	@Override
 	public void incluirArticulo(Articulo a) {
-		inventario = new HashMap<String, Articulo>();
+		inventario.put(a.getCodigo(), a);
 
 	}
 
 	@Override
 	public void buscarArticulo(int codigo) {
-		Iterator<String> buscar = inventario.keySet().iterator();
-		while (buscar.hasNext()) {
-			String clave = buscar.next();
-			Articulo valor = inventario.get(clave);
-			System.out.println(valor);
-		}
+		
+		System.out.println(inventario.get(codigo));
+		
 
 	}
 
 	@Override
 	public void eliminarArticulo(int codigo) {
-		Iterator<String> borrar = inventario.keySet().iterator();
-		while (borrar.hasNext()) {
-			borrar.remove();
+		if(inventario.containsKey(codigo)) {
+			inventario.remove(codigo);
 			System.out.println("Articulo eliminado");
+		}else {
+			System.out.println("Codigo no encontrado");
 		}
+		
 
 	}
 
 	@Override
 	public void buscarPorDescricion(String descripcion) {
-		Iterator<String> buscar=(Iterator<String>) inventario.get(descripcion);
-		while(buscar.hasNext()) {
-			String encontrado=buscar.next();
-			System.out.println("La descripcion es" + encontrado);
-		}
+		
+		for(Map.Entry<Integer,Articulo> entry : inventario.entrySet()) {
+            if (entry.getValue().getDescripcion().toUpperCase().startsWith(descripcion.toUpperCase())) {
+            	System.out.println(entry.getValue().toString());            }
+        }
+		
+//		Iterator<String> buscar=(Iterator<String>) inventario.get(descripcion);
+//		while(buscar.hasNext()==buscar.equals(buscar)) {
+//			String encontrado=buscar.next();
+//			System.out.println("La descripcion es" + encontrado);
+//		}
 
 	}
 
@@ -54,8 +66,11 @@ public class GestionArticulosHashMapImpl implements GestionArticulo {
 	}
 
 	@Override
-	public void buscarPorInventario() {
-		// TODO Auto-generated method stub
+	public void buscarPorIntervalo(double precioMayor,double precioMenor) {
+		Iterator<Integer> igual=(Iterator<Integer>) inventario.get(inventario);
+		if(((Articulo) igual).getPrecio()>=precioMenor && ((Articulo) igual).getPrecio()<=precioMayor) {
+			System.out.println(igual);
+		}
 
 	}
 

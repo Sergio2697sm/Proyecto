@@ -13,5 +13,5 @@ public interface GestionArticulo {
 
 	void mostrarInventario();
 
-	void buscarPorInventario();
+	void buscarPorIntervalo(double precioMayor,double precioMenor);
 }
